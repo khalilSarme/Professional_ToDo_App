@@ -1,7 +1,7 @@
 <template>
   <div class="todos">
     <v-container class="d-flex flex-column" style="gap: 20px">
-      <v-card class="pb-0 pt-2 rounded-xl" v-if="todos.length" color="transparent">
+      <v-card class="pb-0 pt-2 rounded-xl" v-if="todos.length" color="transparent" elevation="0">
         <v-card-title>
           <h4>Filter By</h4>
         </v-card-title>
