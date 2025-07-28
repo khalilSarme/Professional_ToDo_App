@@ -11,8 +11,8 @@
           </v-card-title>
           <v-card-text class="px-2 mt-2">
             <v-text-field label="What do you want to do ?" v-model="t_text" variant="outlined" clearable></v-text-field>
-            <v-date-input label="Start this task at" v-model="t_pd" variant="outlined" clearable></v-date-input>
-            <v-date-input label="End this task at" v-model="t_ed" variant="outlined" clearable></v-date-input>
+            <v-date-input label="Start this task at" v-model="t_pd" variant="outlined" clearable :min="today[0]"></v-date-input>
+            <v-date-input label="End this task at" v-model="t_ed" variant="outlined" clearable :min="today[0]"></v-date-input>
           </v-card-text>
           <v-card-actions class="pb-4 px-4 d-flex justify-start" v-if="(t_text && t_pd && t_ed)">
             <v-btn variant="elevated" elevation="0" class="rounded-xl px-5" color="primary" @click="fireUpdate()" :loading="loading">
@@ -67,5 +67,7 @@
       em.emit('tg_ntfy', "Updated Successfally")
     }, 2200)
   }
+  
+  const today = new Date().toISOString().split('T')
 
 </script>

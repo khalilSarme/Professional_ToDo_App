@@ -11,13 +11,13 @@
           </v-card-title>
           <v-card-text class="px-2 mt-2">
             <v-text-field label="What do you want to do ?" v-model="t_text" variant="outlined" clearable></v-text-field>
-            <v-date-input label="Start this task at" v-model="t_pd" variant="outlined" clearable></v-date-input>
-            <v-date-input label="End this task at" v-model="t_ed" variant="outlined" clearable></v-date-input>
+            <v-date-input label="Start this task at" v-model="t_pd" variant="outlined" clearable :min="today[0]"></v-date-input>
+            <v-date-input label="End this task at" v-model="t_ed" variant="outlined" clearable :min="today[0]"></v-date-input>
             <v-checkbox hide-details label="Mark as Important" v-model="t_is_I"></v-checkbox>
           </v-card-text>
           <v-card-actions class="d-flex align-center justify-space-between pb-4 px-4" v-if="(t_text && t_pd && t_ed)">
             <v-btn variant="elevated" elevation="0" class="rounded-xl px-5" color="primary" @click="fireCreate()" :loading="loading">
-              Save
+              Start
             </v-btn>
             <v-btn variant="outlined" color="grey" class="rounded-xl px-5" @click="mxn.clearTaskData()">
               Clear
@@ -68,4 +68,7 @@
       em.emit('tg_ntfy', "Started Successfally")
     }, 2200)
   }
+  
+  const today = new Date().toISOString().split('T')
+  
 </script>
