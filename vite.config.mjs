@@ -7,6 +7,7 @@ import Vue from '@vitejs/plugin-vue'
 import VueRouter from 'unplugin-vue-router/vite'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
 import Vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
+import { ghPages } from "vite-plugin-gh-pages"
 
 // Utilities
 import { defineConfig } from 'vite'
@@ -16,6 +17,7 @@ import { fileURLToPath, URL } from 'node:url'
 export default defineConfig({
   base: '/Professional_ToDo_App/',
   plugins: [
+    ghPages(),
     VueRouter(),
     Layouts(),
     Vue({
