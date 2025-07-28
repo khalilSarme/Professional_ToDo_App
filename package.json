@@ -8,8 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint . --fix",
-    "predeploy": "cp dist/index.html dist/404.html && vite build",
-    "deploy": "vite-gh-pages"
+    "postbuild": "cp dist/index.html dist/404.html",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@fontsource/roboto": "5.2.5",
