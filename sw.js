@@ -5,7 +5,7 @@ const CACHE_NAME = 'task-manager-cache-v1';
 const urlsToCache = [
   '/',
   '/index.html',
-  '/assets/'
+  '/assets/*'
 ];
 
 // 1. حدث التثبيت (Install Event) - حفظ الملفات في الذاكرة المؤقتة
