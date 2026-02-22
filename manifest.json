@@ -1,0 +1,12 @@
+{
+  "name": "To Do App",
+  "short_name": "Task Manager",
+  "description": "Manage and configure time.",
+  "lang": "en-US",
+  "start_url": "/?source=homescreen",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#0a84ff"
+}
